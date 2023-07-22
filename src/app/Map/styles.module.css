@@ -1,0 +1,7 @@
+.maps{
+    max-width: 1200px;
+    width: 100%;
+    max-height: 400px;
+    display: flex;
+    /* justify-content: flex-end; */
+}
