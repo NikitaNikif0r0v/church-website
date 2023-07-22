@@ -1,9 +1,9 @@
-.wrapper{
+.wrapper {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
 }
-.logo2{
+.logo2 {
   background: #2945e3;
 }
 .logo {
@@ -26,28 +26,28 @@
 }
 @media (max-width: 767px) {
   .burger {
-  display: block;
-}
-.burger{
-position: relative;
-z-index: 1;
-transform: rotate(90deg);
-transition: transform .8s;
-}
-.burger{
-  display: inline-block;
-  width: 30px;
-  height: 22px;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-}
-.burger_line{
-  display: inline-block;
-  background-color: #2945e3;
-  border: 1.5px solid #2945e3;
-  width: 25px;
-}
+    display: block;
+  }
+  .burger {
+    position: relative;
+    z-index: 1;
+    transform: rotate(90deg);
+    transition: transform 0.8s;
+  }
+  .burger {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+  }
+  .burger_line {
+    display: inline-block;
+    background-color: #2945e3;
+    border: 1.5px solid #2945e3;
+    width: 25px;
+  }
 }
 
 @media (max-width: 767px) {

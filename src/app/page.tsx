@@ -1,16 +1,15 @@
-import Image from 'next/image'
-//import Header from './Header/Header'
-import Burger from './Burger/Burger'
-import Map from './Map/Map'
-//import LifeChurch from './LifeChurch/LifeChurch'
+import Burger from '@/components/Burger';
+import LifeChurch from '@/components/LifeChurch';
+import Map from '@/components/Map';
+import Navigation from '@/components/Navigation';
+
 export default function Home() {
-  return (
-    <html>
-      <body>
-        <Burger/>
-        {/* <LifeChurch/> */}
-        <Map/>
-      </body>
-    </html>
-  )
+    return (
+        <>
+            <Navigation />
+            {/* <Burger /> */}
+            <LifeChurch />
+            <Map />
+        </>
+    );
 }
