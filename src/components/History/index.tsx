@@ -1,10 +1,10 @@
+'use client';
 import styles from './styles.module.scss'
-export default function Map() {
+export default function History() {
   return (
     <div className={styles.wrapper}>
       <section className={styles.text}>
         <h4>Drago nam je &scaron;to ste ovdje</h4>
-        <h4>Službe: nedjeljom u 10:00 sati.</h4>
         <h4>Na&scaron;a misija:</h4>
         <h4>Učeći Riječ Božiju živimo.</h4>
         <h4>Riječ Božija je vrijedna da je izučavamo i poučavamo.</h4>

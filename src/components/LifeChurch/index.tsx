@@ -1,7 +1,10 @@
 'use client';
 import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
+import Slider from 'react-slick';
 import Image from 'next/image';
+import bgImage from '../../assets/images/intro_bg.jpg'
+import styles from './styles.module.scss'
 
 const API_KEY = 'AIzaSyA2fkCoH5QqdBMD6sbaHtlEHJr7u4O0www';
 
@@ -19,7 +22,7 @@ export default function LifeChurch() {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&order=date&maxResults=5&channelId=UCIo_0VG0E1I-7L0F7hMINEQ`,
+                    `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&order=date&maxResults=4&channelId=UCIo_0VG0E1I-7L0F7hMINEQ`,
                 );
                 const data = await response.json();
                 setVideos(data.items);
@@ -30,14 +33,22 @@ export default function LifeChurch() {
         };
         fetchData();
     }, []);
-
+    const sliderSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      };
     return (
-        <div>
-            <h2>Latest Videos:</h2>
-            <ul>
+        <div className={styles.wrapper} style={{ backgroundImage: `url(${bgImage.src})` }}>
+            
+            <h2 className={styles.heading}>Posljednje propovijedi:</h2>
+            {/* <Slider {...sliderSettings}> */}
+              <ul className={styles.places}>
                 {videos &&
                     videos.map((video) => (
-                        <li key={video.id.videoId}>
+                        <li className={styles.element} key={video.id.videoId}>
                             <a
                                 href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
                                 target='_blank'
@@ -48,7 +59,9 @@ export default function LifeChurch() {
                             </a>
                         </li>
                     ))}
-            </ul>
+             </ul>  
+            {/* </Slider> */}
+            
         </div>
     );
 }
