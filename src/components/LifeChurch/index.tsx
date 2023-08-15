@@ -44,11 +44,11 @@ export default function LifeChurch() {
         <div className={styles.wrapper} style={{ backgroundImage: `url(${bgImage.src})` }}>
             
             <h2 className={styles.heading}>Posljednje propovijedi:</h2>
-            {/* <Slider {...sliderSettings}> */}
-              <ul className={styles.places}>
+            <Slider {...sliderSettings}>
+              <div className={styles.places}>
                 {videos &&
                     videos.map((video) => (
-                        <li className={styles.element} key={video.id.videoId}>
+                        <div className={styles.element} key={video.id.videoId}>
                             <a
                                 href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
                                 target='_blank'
@@ -57,10 +57,10 @@ export default function LifeChurch() {
                                 {video.snippet.title}
                                 <Image src={video.snippet.thumbnails.medium.url} alt='dads' width={320} height={180} />
                             </a>
-                        </li>
+                        </div>
                     ))}
-             </ul>  
-            {/* </Slider> */}
+             </div>  
+            </Slider>
             
         </div>
     );
