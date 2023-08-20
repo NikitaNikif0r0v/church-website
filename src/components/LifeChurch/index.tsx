@@ -3,8 +3,9 @@ import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
-import bgImage from '../../assets/images/intro_bg.jpg'
+//import bgImage from '../../assets/images/intro_bg.jpg'
 import styles from './styles.module.scss'
+import Head from 'next/head';
 
 const API_KEY = 'AIzaSyA2fkCoH5QqdBMD6sbaHtlEHJr7u4O0www';
 
@@ -35,19 +36,38 @@ export default function LifeChurch() {
     }, []);
     const sliderSettings = {
         dots: true,
-        infinite: true,
+        infinite: false,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 1,
         slidesToScroll: 1,
       };
+      console.log(videos);
     return (
-        <div className={styles.wrapper} style={{ backgroundImage: `url(${bgImage.src})` }}>
-            
+        <div className={styles.wrapper} >~
+        <link
+        rel="stylesheet"
+        type="text/css"
+        // charset="UTF-8"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+      />
+            {/* <Head> */}
+  {/* <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />  */}
+  {/* <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" /> */}
+{/* </Head> */}
+            {/* style={{ backgroundImage: `url(${bgImage.src})` }} */}
             <h2 className={styles.heading}>Posljednje propovijedi:</h2>
-            <Slider {...sliderSettings}>
-              <div className={styles.places}>
+            <div className={styles.sliderWhich}>
+                <Slider {...sliderSettings}>
+                {/* <div className={styles.places}> */}
+                
                 {videos &&
                     videos.map((video) => (
+                    //videos.slice(0, 4).map((video) => (
                         <div className={styles.element} key={video.id.videoId}>
                             <a
                                 href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
@@ -59,8 +79,13 @@ export default function LifeChurch() {
                             </a>
                         </div>
                     ))}
-             </div>  
+                {/* </div> */}
             </Slider>
+
+            </div>
+            
+                
+            
             
         </div>
     );

@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation';
 //import { Route, Switch } from 'react-router-dom';
 //import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
+
 export default function Home() {
     return (
         <>
