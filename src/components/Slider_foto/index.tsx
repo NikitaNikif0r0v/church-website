@@ -43,7 +43,7 @@ export default function LifeChurch() {
       };
       console.log(videos);
     return (
-        <div className={styles.wrapper} >~
+        <div >
         <link
         rel="stylesheet"
         type="text/css"
@@ -60,15 +60,15 @@ export default function LifeChurch() {
   {/* <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" /> */}
 {/* </Head> */}
             {/* style={{ backgroundImage: `url(${bgImage.src})` }} */}
-            <h2 className={styles.heading}>Posljednje propovijedi:</h2>
-            <div className={styles.sliderWhich}>
+            <h2 >Posljednje propovijedi:</h2>
+            <div >
                 <Slider {...sliderSettings}>
                 {/* <div className={styles.places}> */}
                 
                 {videos &&
                     videos.map((video) => (
                     //videos.slice(0, 4).map((video) => (
-                        <div className={styles.element} key={video.id.videoId}>
+                        <div  key={video.id.videoId}>
                             <a
                                 href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
                                 target='_blank'
