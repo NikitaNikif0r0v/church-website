@@ -29,7 +29,6 @@ export default function LifeChurch() {
                 const data = await response.json();
                 setVideos(data.items);
             } catch (error) {
-                console.log(data);
                 console.error(error);
             }
         };

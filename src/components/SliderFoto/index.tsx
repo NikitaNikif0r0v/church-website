@@ -28,7 +28,6 @@ export default function LifeChurch() {
                 const data = await response.json();
                 setVideos(data.items);
             } catch (error) {
-                console.log(data);
                 console.error(error);
             }
         };
@@ -41,7 +40,6 @@ export default function LifeChurch() {
         slidesToShow: 1,
         slidesToScroll: 1,
       };
-      console.log(videos);
     return (
         <div >
         <link
